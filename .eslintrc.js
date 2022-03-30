@@ -23,6 +23,7 @@ module.exports = {
   ],
   rules: {
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
+    'arrow-parens': ['error', 'as-needed'],
     'comma-dangle': ['error', 'never'],
     semi: ['error', 'never'],
     camelcase: [1, {
