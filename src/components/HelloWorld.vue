@@ -1,19 +1,34 @@
 <script setup lang="ts">
-import { ref, defineProps, onMounted } from 'vue'
+import {
+  ref, onMounted
+} from 'vue'
 
-defineProps<{ msg: string }>()
+const props = defineProps({
+  msg: {
+    type: String,
+    default: ''
+  }
+})
+
+const count = ref(0)
 
 const title = ref<HTMLTitleElement | null>(null)
 onMounted(() => {
   console.log(title.value)
 })
 
-const count = ref(0)
+const emit = defineEmits(['increment'])
+
+const increment = () => {
+  count.value += 1
+  emit('increment')
+}
+
 </script>
 
 <template>
   <h1 ref="title">
-    {{ msg }}
+    {{ props.msg }}
   </h1>
 
   <p>
@@ -47,7 +62,7 @@ const count = ref(0)
 
   <button
     type="button"
-    @click="count++"
+    @click="increment"
   >
     count is: {{ count }}
   </button>
