@@ -5,6 +5,7 @@ import vueJsx from '@vitejs/plugin-vue-jsx'
 import path from 'path'
 
 export default defineConfig({
+  envDir: path.resolve(__dirname, 'environment'),
   resolve: {
     alias: {
       '@': path.resolve(__dirname, 'src')
