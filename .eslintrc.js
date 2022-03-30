@@ -25,7 +25,11 @@ module.exports = {
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'comma-dangle': ['error', 'never'],
     semi: ['error', 'never'],
+    camelcase: [1, {
+      properties: 'never'
+    }],
     'import/no-extraneous-dependencies': 'off',
+    'import/no-unresolved': [2, { ignore: ['^@/'] }],
     'import/extensions': [
       2,
       'ignorePackages',
@@ -43,4 +47,12 @@ module.exports = {
       typescript: {}
     }
   }
+  // overrides: [
+  //   {
+  //     files: ['src/api/**/*.ts'],
+  //     rules: {
+  //       camelcase: 'off'
+  //     }
+  //   }
+  // ]
 }
