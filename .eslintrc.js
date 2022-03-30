@@ -18,6 +18,7 @@ module.exports = {
     '@typescript-eslint'
   ],
   rules: {
+    'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'comma-dangle': ['error', 'never'],
     semi: ['error', 'never'],
     'import/no-extraneous-dependencies': 'off'

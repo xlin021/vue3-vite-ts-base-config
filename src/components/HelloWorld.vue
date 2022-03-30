@@ -1,13 +1,20 @@
 <script setup lang="ts">
-import { ref, defineProps } from 'vue'
+import { ref, defineProps, onMounted } from 'vue'
 
 defineProps<{ msg: string }>()
+
+const title = ref<HTMLTitleElement | null>(null)
+onMounted(() => {
+  console.log(title.value)
+})
 
 const count = ref(0)
 </script>
 
 <template>
-  <h1>{{ msg }}</h1>
+  <h1 ref="title">
+    {{ msg }}
+  </h1>
 
   <p>
     Recommended IDE setup:
