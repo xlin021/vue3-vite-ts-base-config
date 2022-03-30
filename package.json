@@ -6,7 +6,8 @@
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
     "preview": "vite preview",
-    "lint": "eslint ./src/**/*.{vue,ts} --fix"
+    "lint": "eslint ./src/**/*.{vue,ts} --fix",
+    "prepare": "husky install"
   },
   "dependencies": {
     "vue": "^3.2.25"
@@ -19,8 +20,16 @@
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.25.4",
     "eslint-plugin-vue": "^8.5.0",
+    "husky": "^7.0.4",
+    "lint-staged": "^12.3.7",
     "typescript": "^4.5.4",
     "vite": "^2.9.0",
     "vue-tsc": "^0.29.8"
+  },
+  "lint-staged": {
+    "*.{js,jsx,vue,ts,tsx}": [
+      "npm run lint",
+      "git add"
+    ]
   }
 }
