@@ -5,6 +5,19 @@ import vueJsx from '@vitejs/plugin-vue-jsx'
 import path from 'path'
 
 export default defineConfig({
+  server: {
+    proxy: {
+      '/api': {
+        target: 'http://localhost:3001',
+        changeOrigin: true,
+        rewrite: apiPath => apiPath.replace(/^\/api/, ''),
+        secure: false,
+        headers: {
+          Referer: 'http://localhost:3001'
+        }
+      }
+    }
+  },
   envDir: path.resolve(__dirname, 'environment'),
   resolve: {
     alias: {
