@@ -5,7 +5,7 @@
 </template>
 
 <script lang='tsx' setup>
-import Foo from './foo.tsx'
+import Foo from './foo'
 
 const abc = <h1>Hello World</h1>
 </script>

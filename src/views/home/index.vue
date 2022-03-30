@@ -1,6 +1,5 @@
 <template>
-  <!-- 路由的渲染出口 -->
-  <router-view />
+  <h1>Home</h1>
 </template>
 
 <script lang='ts' setup>

@@ -25,6 +25,22 @@ module.exports = {
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'comma-dangle': ['error', 'never'],
     semi: ['error', 'never'],
-    'import/no-extraneous-dependencies': 'off'
+    'import/no-extraneous-dependencies': 'off',
+    'import/extensions': [
+      2,
+      'ignorePackages',
+      {
+        js: 'never',
+        ts: 'never',
+        tsx: 'never',
+        json: 'never'
+      }
+    ],
+    'vue/multi-word-component-names': 'off'
+  },
+  settings: {
+    'import/resolver': {
+      typescript: {}
+    }
   }
 }
